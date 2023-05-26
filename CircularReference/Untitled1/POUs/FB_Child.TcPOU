@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_Child" Id="{cda601de-aae1-4afb-98c9-56c3d3ddc641}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Child EXTENDS FB_Parent
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="FB_init" Id="{120ddc91-1804-4e8d-86a5-3db744e6c221}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SUPER^.ref_child REF= THIS^;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Child">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Child.FB_init">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
