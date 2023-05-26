@@ -7,6 +7,7 @@ END_VAR
 VAR_OUTPUT
 END_VAR
 VAR
+	m_child_data : ARRAY [0..1023] OF REAL;
 END_VAR
 ]]></Declaration>
     <Implementation>
